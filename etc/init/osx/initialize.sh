@@ -8,6 +8,7 @@ fi
 
 brew update
 
+cat $WORKING_DIR/tapfiles | xargs brew tap
 cat $WORKING_DIR/caskfiles | xargs brew cask install
 cat $WORKING_DIR/brewfiles | xargs brew install
 
