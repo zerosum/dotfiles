@@ -9,9 +9,20 @@ fi
 
 brew update
 
-cat $WORKING_DIR/tapfiles | xargs brew tap
-cat $WORKING_DIR/caskfiles | xargs brew cask install
-cat $WORKING_DIR/brewfiles | xargs brew install
+for tap in $(cat $WORKING_DIR/tapfiles)
+do
+  [ -z $(brew tap | grep $tap) ] && brew tap $tap
+done
+
+for cask in $(cat $WORKING_DIR/caskfiles)
+do
+  [ -z $(brew cask list | grep $cask) ] && brew cask install $cask
+done
+
+for keg in $(cat $WORKING_DIR/brewfiles)
+do
+  [ -z $(brew list | grep $keg) ] && brew install $keg
+done
 
 ### init zsh
 ZSH_BIN=/usr/local/bin/zsh
