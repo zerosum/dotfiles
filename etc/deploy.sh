@@ -29,9 +29,9 @@ for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
 done
 
 echo 'zstyle :prezto:module:prompt theme powerlevel10k' >> ~/.zpreztorc
+echo '[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh' >> ~/.zshrc
 
 for zshfile in $(find ~/.zsh/ -name '*.zsh' -type f)
 do
-  echo "[ -f $zshfile ] && source $zshfile" >> ~/.zshrc
+  echo "[[ -f $zshfile ]] && source $zshfile" >> ~/.zshrc
 done
-
