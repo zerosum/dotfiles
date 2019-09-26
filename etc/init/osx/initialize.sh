@@ -2,6 +2,8 @@
 
 WORKING_DIR=$(cd $(dirname $0); pwd)
 
+export PATH=/usr/local/bin:$PATH
+
 ### init Homebrew
 if [ -z $(which brew) ]; then
   /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
@@ -16,7 +18,7 @@ done
 
 for cask in $(cat $WORKING_DIR/caskfiles)
 do
-  [ -z $(brew cask list | grep $cask) ] && brew cask install $cask
+  [ -z $(brew cask list | grep $cask) ] && brew cask install $cask --force
 done
 
 for keg in $(cat $WORKING_DIR/brewfiles)
