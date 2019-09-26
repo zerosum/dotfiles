@@ -1,3 +1,6 @@
 [user]
     name  = zerosum
     email = info@zerosum.dev
+
+[core]
+    editor = vim
