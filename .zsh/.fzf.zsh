@@ -11,3 +11,7 @@ fi
 # Key bindings
 # ------------
 source "/usr/local/opt/fzf/shell/key-bindings.zsh"
+
+# common setting
+export FZF_DEFAULT_OPTS='--height 20% --reverse --border --prompt="? "'
+export FZF_ALT_C_OPTS="--select-1 --exit-0"

@@ -35,3 +35,9 @@ fi
 if [ $(echo $SHELL) != $ZSH_BIN ]; then
   chsh -s $ZSH_BIN
 fi
+
+### init anyenv
+export PATH="$HOME/.anyenv/bin:$PATH"
+[[ ! -e ~/.config/anyenv ]] && anyenv install --init
+anyenv install --skip-existing jenv
+anyenv install --skip-existing scalaenv

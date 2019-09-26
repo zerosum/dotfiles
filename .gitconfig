@@ -4,3 +4,6 @@
 
 [core]
     editor = vim
+
+[ghq]
+    root = ~/workspace
