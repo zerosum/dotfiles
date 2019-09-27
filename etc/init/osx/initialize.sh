@@ -2,11 +2,16 @@
 
 WORKING_DIR=$(cd $(dirname $0); pwd)
 
-export PATH=/usr/local/bin:$PATH
-
 ### init Homebrew
-if [ -z $(which brew) ]; then
-  /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+if [[ -z $(which brew) ]]; then
+  if [[ -z $(echo ${BREW_HOME}) ]]; then
+    /usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
+    export PATH=/usr/local/bin:$PATH
+  else
+    [[ ! -e "${BREW_HOME}" ]] && mkdir -p $BREW_HOME
+    curl -L https://github.com/Homebrew/brew/tarball/master | tar xz --strip 1 -C ${BREW_HOME}
+    export PATH=$BREW_HOME/bin:$PATH
+  fi
 fi
 
 brew update
