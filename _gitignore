@@ -1,0 +1,16 @@
+### os
+.DS_Store
+
+### idea
+.idea/
+*.iml
+
+### maven
+target/
+
+### gradle
+.gradle/
+build/
+
+### sbt
+target/

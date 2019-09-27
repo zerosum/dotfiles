@@ -1,9 +1,9 @@
-[user]
-    name  = zerosum
-    email = info@zerosum.dev
+[include]
+    path = .gitconfig.local
 
 [core]
     editor = vim
+    excludesfile = $HOME/.gitignore
 
 [ghq]
     root = ~/workspace
