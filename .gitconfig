@@ -3,10 +3,10 @@
 
 [core]
     editor = vim
-    excludesfile = $HOME/.gitignore
+    excludesfile = ~/.gitignore
 
 [alias]
     unstage = reset HEAD
 
 [ghq]
-    root = $HOME/workspace
+    root = ~/workspace
