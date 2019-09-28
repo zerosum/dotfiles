@@ -43,3 +43,6 @@ for zshfile in $(find ~/.zsh/ -name '*.zsh' -type f)
 do
   echo "[[ -f $zshfile ]] && source $zshfile" >> ~/.zshrc
 done
+
+### apply
+exec $SHELL -l
