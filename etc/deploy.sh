@@ -44,5 +44,11 @@ do
   echo "[[ -f $zshfile ]] && source $zshfile" >> ~/.zshrc
 done
 
+### setup others
+[[ ! -z $(brew list openssh 2>/dev/null) ]] && echo 'export PATH="/usr/local/opt/openssl/bin:$PATH"' >> ~/.zshrc
+
+### install git-secrets
+git secrets -f --install ~/.git-templates/git-secrets
+
 ### apply
 exec $SHELL -l
