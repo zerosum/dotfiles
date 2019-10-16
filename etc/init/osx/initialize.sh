@@ -41,3 +41,4 @@ export PATH="$HOME/.anyenv/bin:$PATH"
 [[ ! -e ~/.config/anyenv ]] && anyenv install --init
 anyenv install --skip-existing jenv
 anyenv install --skip-existing scalaenv
+anyenv install --skip-existing nodenv
