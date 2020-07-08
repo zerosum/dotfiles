@@ -36,9 +36,16 @@ if [ $(echo $SHELL) != $ZSH_BIN ]; then
   chsh -s $ZSH_BIN
 fi
 
+### init coursier
+DOT_COURSIER=$WORKING_DIR/.coursier
+rm -f $DOT_COURSIER
+mkdir -p $DOT_COURSIER
+curl -fLo $DOT_COURSIER/cs https://git.io/coursier-cli-macos && \
+    chmod +x $DOT_COURSIER/cs && \
+    (xattr -d com.apple.quarantine $DOT_COURSIER/cs || true)
+eval "$($DOT_COURSIER/cs setup --env)"
+
 ### init anyenv
 export PATH="$HOME/.anyenv/bin:$PATH"
 [[ ! -e ~/.config/anyenv ]] && anyenv install --init
-anyenv install --skip-existing jenv
-anyenv install --skip-existing scalaenv
 anyenv install --skip-existing nodenv
