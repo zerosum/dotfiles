@@ -37,6 +37,9 @@ if [ $(echo $SHELL) != $ZSH_BIN ]; then
 fi
 
 ### init coursier
+if [[ $(which cs) ]]; then
+cs update
+else
 DOT_COURSIER=$WORKING_DIR/.coursier
 rm -f $DOT_COURSIER
 mkdir -p $DOT_COURSIER
@@ -44,6 +47,7 @@ curl -fLo $DOT_COURSIER/cs https://git.io/coursier-cli-macos && \
     chmod +x $DOT_COURSIER/cs && \
     (xattr -d com.apple.quarantine $DOT_COURSIER/cs || true)
 eval "$($DOT_COURSIER/cs setup --env)"
+fi
 
 ### init rust
 if [[ $(ls $HOME/.cargo/bin/rustup) ]]; then
