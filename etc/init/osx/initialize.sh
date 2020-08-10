@@ -45,6 +45,13 @@ curl -fLo $DOT_COURSIER/cs https://git.io/coursier-cli-macos && \
     (xattr -d com.apple.quarantine $DOT_COURSIER/cs || true)
 eval "$($DOT_COURSIER/cs setup --env)"
 
+### init rust
+if [[ $(ls $HOME/.cargo/bin/rustup) ]]; then
+rustup update
+else
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --no-modify-path
+fi
+
 ### init anyenv
 export PATH="$HOME/.anyenv/bin:$PATH"
 [[ ! -e ~/.config/anyenv ]] && anyenv install --init
