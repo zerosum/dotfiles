@@ -55,8 +55,23 @@ rustup update
 else
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --no-modify-path
 fi
+$HOME/.cargo/bin/cargo install wasm-pack
 
 ### init anyenv
+if [[ -d "$HOME/.anyenv" ]]; then
+  cd "$HOME/.anyenv"
+  git pull
+  cd -
+else
+  git clone https://github.com/anyenv/anyenv ~/.anyenv
+fi
+
 export PATH="$HOME/.anyenv/bin:$PATH"
 [[ ! -e ~/.config/anyenv ]] && anyenv install --init
+
+mkdir -p $(anyenv root)/plugins
+[[ ! -d $(anyenv root)/plugins/anyenv-update ]] && \
+git clone https://github.com/znz/anyenv-update.git $(anyenv root)/plugins/anyenv-update
+
 anyenv install --skip-existing nodenv
+anyenv update
