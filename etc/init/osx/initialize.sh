@@ -18,12 +18,12 @@ done
 
 for cask in $(cat $WORKING_DIR/caskfiles)
 do
-  [[ -z $(brew cask list | grep $cask) ]] && brew cask install $cask --force
+  [[ -z $(brew list --cask | grep $cask) ]] && brew cask install $cask --force
 done
 
 for keg in $(cat $WORKING_DIR/brewfiles)
 do
-  [[ -z $(brew list | grep $keg) ]] && brew install $keg
+  [[ -z $(brew list --formula | grep $keg) ]] && brew install $keg
 done
 
 ### init zsh
