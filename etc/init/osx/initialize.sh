@@ -57,6 +57,13 @@ curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --no-mod
 fi
 $HOME/.cargo/bin/cargo install wasm-pack
 
+### init Haskell
+if [[ $(ls /usr/local/bin/stack) ]]; then
+stack upgrade
+else
+curl -sSL https://get.haskellstack.org/ | sh
+fi
+
 ### init anyenv
 if [[ -d "$HOME/.anyenv" ]]; then
   cd "$HOME/.anyenv"
