@@ -58,31 +58,9 @@ fi
 $HOME/.cargo/bin/cargo install wasm-pack
 
 ### init Haskell
-# if [[ $(ls /usr/local/bin/stack) ]]; then
-# else
 curl --proto '=https' --tlsv1.2 -sSf https://get-ghcup.haskell.org | \
 env \
 BOOTSTRAP_HASKELL_NONINTERACTIVE=1 \
 BOOTSTRAP_HASKELL_INSTALL_STACK=1 \
 BOOTSTRAP_HASKELL_INSTALL_HLS=1 \
 sh
-# fi
-
-### init anyenv
-if [[ -d "$HOME/.anyenv" ]]; then
-  cd "$HOME/.anyenv"
-  git pull
-  cd -
-else
-  git clone https://github.com/anyenv/anyenv ~/.anyenv
-fi
-
-export PATH="$HOME/.anyenv/bin:$PATH"
-[[ ! -e ~/.config/anyenv ]] && anyenv install --init
-
-mkdir -p $(anyenv root)/plugins
-[[ ! -d $(anyenv root)/plugins/anyenv-update ]] && \
-git clone https://github.com/znz/anyenv-update.git $(anyenv root)/plugins/anyenv-update
-
-anyenv install --skip-existing nodenv
-anyenv update

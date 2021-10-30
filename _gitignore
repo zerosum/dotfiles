@@ -17,3 +17,9 @@ build/
 
 ### sbt
 target/
+
+### metals
+.metals/
+
+### vscode
+.vscode/
