@@ -18,7 +18,7 @@ done
 
 for cask in $(cat $WORKING_DIR/caskfiles)
 do
-  [[ -z $(brew list --cask | grep $cask) ]] && brew cask install $cask --force
+  [[ -z $(brew list --cask | grep $cask) ]] && brew install --cask $cask --force
 done
 
 for keg in $(cat $WORKING_DIR/brewfiles)
