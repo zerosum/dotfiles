@@ -20,6 +20,7 @@ target/
 
 ### metals
 .metals/
+.bsp/
 
 ### vscode
 .vscode/

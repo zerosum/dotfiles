@@ -26,6 +26,8 @@ do
   [[ -z $(brew list --formula | grep $keg) ]] && brew install $keg
 done
 
+brew upgrade
+
 ### init zsh
 ZSH_BIN=/usr/local/bin/zsh
 if [[ -z $(cat /etc/shells | grep $ZSH_BIN) ]]; then
@@ -35,6 +37,21 @@ fi
 if [ $(echo $SHELL) != $ZSH_BIN ]; then
   chsh -s $ZSH_BIN
 fi
+
+### init asdf
+asdf plugin add java
+asdf plugin add nodejs
+asdf plugin update --all
+
+global_java_version=temurin-8.0.312+7
+
+asdf install java $global_java_version
+asdf global java $global_java_version
+
+global_nodejs_version=16.13.2
+
+asdf install nodejs $global_nodejs_version
+asdf global nodejs $global_nodejs_version
 
 ### init coursier
 if [[ $(which cs) ]]; then
