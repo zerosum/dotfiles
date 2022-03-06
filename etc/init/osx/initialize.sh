@@ -81,3 +81,11 @@ BOOTSTRAP_HASKELL_NONINTERACTIVE=1 \
 BOOTSTRAP_HASKELL_INSTALL_STACK=1 \
 BOOTSTRAP_HASKELL_INSTALL_HLS=1 \
 sh
+
+### init deno
+if [ -z $(which deno) ]; then
+  curl -fsSL https://deno.land/install.sh | sh
+fi
+export DENO_INSTALL="$HOME/.deno"
+ln -s $DENO_INSTALL/bin/deno /usr/local/bin/deno
+deno upgrade
