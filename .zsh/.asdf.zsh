@@ -1,1 +1,1 @@
-. $(brew --prefix asdf)/libexec/asdf.sh
+. $(/opt/homebrew/bin/brew --prefix asdf)/libexec/asdf.sh

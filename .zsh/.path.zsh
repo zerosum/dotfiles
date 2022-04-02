@@ -1,2 +1,7 @@
 typeset -U path PATH
-export PATH="/usr/local/bin:$HOME/Library/ApplicationSupport/Coursier/bin:$PATH"
+path=(
+	/opt/homebrew/bin(N-/)
+	/usr/local/bin(N-/)
+    $HOME/Library/ApplicationSupport/Coursier/bin(N-/)
+	$path
+)

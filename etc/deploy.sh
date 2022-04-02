@@ -1,4 +1,4 @@
-#!/usr/local/bin/zsh
+#!/opt/homebrew/bin/zsh
 
 DOTPATH=~/.dotfiles
 WORKING_DIR=$(cd $(dirname $0); pwd)
@@ -51,4 +51,4 @@ done
 git secrets --install -f ~/.git-templates/git-secrets
 
 ### apply
-exec $SHELL -l
+exec $(command -v zsh) -l

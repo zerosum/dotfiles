@@ -1,5 +1,5 @@
 init: 
-	@./etc/init/osx/initialize.sh
+	@./etc/init/osx/init.sh
 
 deploy:
 	@./etc/deploy.sh
