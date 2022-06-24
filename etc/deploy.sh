@@ -1,5 +1,6 @@
 #!/opt/homebrew/bin/zsh
 
+export BREW_HOME=/opt/homebrew
 DOTPATH=~/.dotfiles
 WORKING_DIR=$(cd $(dirname $0); pwd)
 
@@ -15,7 +16,8 @@ do
   unlink "$HOME"/"$f"
   ln -snfv "$DOTPATH/$f" "$HOME"/"$f"
 done
-ln -snfv "$DOTPATH"/_gitignore "$HOME"/.gitignore
+mkdir -p $HOME/.config/git
+ln -snfv "$DOTPATH"/_gitignore $HOME/.config/git/ignore
 if [[ ! -e "$HOME/.gitconfig.local" ]]; then
   ln -snfv "$DOTPATH"/.gitconfig.local "$HOME"/.gitconfig.local
 fi
@@ -36,6 +38,7 @@ for rcfile in "${ZDOTDIR:-$HOME}"/.zprezto/runcoms/^README.md(.N); do
 done
 
 echo 'zstyle :prezto:module:prompt theme powerlevel10k' >> ~/.zpreztorc
+echo 'export BREW_HOME=/opt/homebrew' >> ~/.zshrc
 echo '[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh' >> ~/.zshrc
 
 ### deploy zsh scripts

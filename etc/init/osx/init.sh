@@ -1,5 +1,7 @@
 #! /bin/bash
 
+export BREW_HOME='/opt/homebrew'
+
 WORKING_DIR=$(cd $(dirname $0); pwd)
 
 if [ -z $(command -v arch) ]; then
