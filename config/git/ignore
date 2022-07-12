@@ -1,0 +1,7 @@
+### Windows ###
+[Dd]esktop.ini
+[Tt]humbs.db
+
+### macOS ###
+.DS_Store
+._*
