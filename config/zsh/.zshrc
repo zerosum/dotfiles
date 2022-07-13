@@ -26,6 +26,7 @@ zinit ice as"command" from"gh-r" \
 zinit light starship/starship
 
 source "$ZDOTDIR/plugins/.fzf.zsh"
+[[ -e "$ZDOTDIR/plugins/.local.zsh" ]] &&  source "$ZDOTDIR/plugins/.local.zsh"
 
 export ASDF_DATA_DIR="$XDG_DATA_HOME/asdf"
 source $ASDF_DATA_DIR/asdf.sh
