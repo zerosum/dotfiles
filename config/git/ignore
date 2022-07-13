@@ -1,7 +1,32 @@
-### Windows ###
+### os
 [Dd]esktop.ini
 [Tt]humbs.db
-
-### macOS ###
 .DS_Store
 ._*
+
+### idea
+.idea/
+*.iml
+
+### coursier-native
+.coursier/
+
+### maven
+target/
+
+### gradle
+.gradle/
+build/
+
+### sbt
+target/
+
+### metals
+.metals/
+.bsp/
+
+### vscode
+.vscode/
+
+### asdf
+.tool-versions
