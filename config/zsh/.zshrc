@@ -20,11 +20,14 @@ zinit wait lucid for \
     PZTM::history \
     PZTM::utility
 
+### starship
 zinit ice as"command" from"gh-r" \
           atclone"./starship init zsh > init.zsh; ./starship completions zsh > _starship" \
           atpull"%atclone" src"init.zsh"
 zinit light starship/starship
+export STARSHIP_CONFIG=$XDG_CONFIG_HOME/starship/starship.toml
 
+###
 source "$ZDOTDIR/plugins/.fzf.zsh"
 [[ -e "$ZDOTDIR/plugins/.local.zsh" ]] &&  source "$ZDOTDIR/plugins/.local.zsh"
 
