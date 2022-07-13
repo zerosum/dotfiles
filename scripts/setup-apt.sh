@@ -11,7 +11,6 @@ sudo apt install -y \
     curl \
     wget \
     cmake \
-    fzf \
     zsh \
     unzip \
     zip \

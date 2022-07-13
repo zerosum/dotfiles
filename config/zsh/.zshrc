@@ -5,6 +5,7 @@ path=(
     /opt/homebrew/bin(N-/)
     "$HOME/.local/bin"(N-/)
     "$XDG_CONFIG_HOME/scripts/bin"(N-/)
+    "$XDG_DATA_HOME/cargo/bin"(N-/)
     "$path[@]"
 )
 
@@ -30,6 +31,10 @@ export ASDF_DATA_DIR="$XDG_DATA_HOME/asdf"
 source $ASDF_DATA_DIR/asdf.sh
 fpath=(${ASDF_DATA_DIR}/completions $fpath)
 autoload -Uz compinit && compinit
+
+export CARGO_HOME="$XDG_DATA_HOME"/cargo
+
+eval "$(navi widget zsh)"
 
 zshaddhistory() {
     local line="${1%%$'\n'}"

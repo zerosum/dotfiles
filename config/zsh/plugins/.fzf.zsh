@@ -1,13 +1,16 @@
-case $OSTYPE in
-    darwin*)
-        source /opt/homebrew/opt/fzf/shell/key-bindings.zsh
-        source /opt/homebrew/opt/fzf/shell/completion.zsh
-        ;;
-    linux*)
-        source /usr/share/doc/fzf/examples/key-bindings.zsh
-        source /usr/share/doc/fzf/examples/completion.zsh
-        ;;
-esac
+# Setup fzf
+# ---------
+if [[ ! "$PATH" == *$XDG_DATA_HOME/fzf/bin* ]]; then
+  PATH="${PATH:+${PATH}:}$XDG_DATA_HOME/fzf/bin"
+fi
+
+# Auto-completion
+# ---------------
+[[ $- == *i* ]] && source "$XDG_DATA_HOME/fzf/shell/completion.zsh" 2> /dev/null
+
+# Key bindings
+# ------------
+source "$XDG_DATA_HOME/fzf/shell/key-bindings.zsh"
 
 frepo() {
     local dir
