@@ -1,5 +1,7 @@
 #! /usr/bin/env bash
 
+[ "$(uname)" = "Darwin" ] && exit
+
 source "$(dirname "$0")/common.sh"
 
 TMP_DIR_NAME=tmp$(date '+%Y%m%d%H%M%S')

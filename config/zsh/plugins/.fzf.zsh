@@ -1,16 +1,26 @@
+fzf_dir=''
+case $OSTYPE in
+    darwin*)
+    fzf_dir=/opt/homebrew/opt/fzf
+    ;;
+    *)
+    fzf_dir=$XDG_DATA_HOME/fzf
+    ;;
+esac
+
 # Setup fzf
 # ---------
-if [[ ! "$PATH" == *$XDG_DATA_HOME/fzf/bin* ]]; then
-  PATH="${PATH:+${PATH}:}$XDG_DATA_HOME/fzf/bin"
+if [[ ! "$PATH" == *$fzf_dir/bin* ]]; then
+  PATH="${PATH:+${PATH}:}$fzf_dir/bin"
 fi
 
 # Auto-completion
 # ---------------
-[[ $- == *i* ]] && source "$XDG_DATA_HOME/fzf/shell/completion.zsh" 2> /dev/null
+[[ $- == *i* ]] && source "$fzf_dir/shell/completion.zsh" 2> /dev/null
 
 # Key bindings
 # ------------
-source "$XDG_DATA_HOME/fzf/shell/key-bindings.zsh"
+source "$fzf_dir/shell/key-bindings.zsh"
 
 frepo() {
     local dir

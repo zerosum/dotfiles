@@ -4,6 +4,8 @@
 # https://github.com/junegunn/fzf/blob/master/install
 #
 
+[ "$(uname)" = "Darwin" ] && exit
+
 source "$(dirname "$0")/common.sh"
 
 INSTALL_DIR=$XDG_DATA_HOME/fzf
