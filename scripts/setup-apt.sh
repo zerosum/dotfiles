@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+[ "$(uname)" = "Darwin" ] && exit
+
 sudo add-apt-repository -y ppa:mmstick76/alacritty
 
 sudo apt update
@@ -13,5 +15,5 @@ sudo apt install -y \
     unzip \
     zip \
     fontconfig \
-    alacritty \
+    # alacritty \
     neovim

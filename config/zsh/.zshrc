@@ -1,6 +1,13 @@
 ZINIT_HOME="${XDG_DATA_HOME:-${HOME}/.local/share}/zinit/zinit.git"
 source "${ZINIT_HOME}/zinit.zsh"
 
+path=(
+    /opt/homebrew/bin(N-/)
+    "$HOME/.local/bin"(N-/)
+    "$XDG_CONFIG_HOME/scripts/bin"(N-/)
+    "$path[@]"
+)
+
 zinit wait lucid blockf light-mode for \
     @'zsh-users/zsh-autosuggestions' \
     @'zsh-users/zsh-completions' \
@@ -9,7 +16,6 @@ zinit wait lucid blockf light-mode for \
 zinit wait lucid for \
     PZTM::environment \
     PZTM::terminal \
-    PZTM::editor \
     PZTM::history \
     PZTM::utility
 

@@ -1,0 +1,16 @@
+tap "homebrew/cask"
+tap "homebrew/cask-fonts"
+
+brew "zsh"
+brew "fzf"
+brew "ghq"
+brew "git"
+brew "gpg"
+brew "gawk"
+brew "httpie"
+brew "jq"
+brew "vim"
+brew "neovim"
+
+cask "font-hackgen"
+cask "font-hackgen-nerd"
