@@ -26,6 +26,11 @@ zinit light starship/starship
 
 source "$ZDOTDIR/plugins/.fzf.zsh"
 
+export ASDF_DATA_DIR="$XDG_DATA_HOME/asdf"
+source $ASDF_DATA_DIR/asdf.sh
+fpath=(${ASDF_DATA_DIR}/completions $fpath)
+autoload -Uz compinit && compinit
+
 zshaddhistory() {
     local line="${1%%$'\n'}"
     [[ ! "$line" =~ "^(cd|jj?|lazygit|la|ll|ls|rm|rmdir)($| )" ]]

@@ -1,5 +1,8 @@
 [core]
-    editor = vim
+    editor = nvim
+
+[ghq]
+    root = ~/workspace
 
 [user]
     name = zerosum

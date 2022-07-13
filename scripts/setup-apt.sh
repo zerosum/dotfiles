@@ -8,6 +8,7 @@ sudo apt update
 sudo apt upgrade -y
 sudo apt install -y \
     git \
+    curl \
     wget \
     cmake \
     fzf \
@@ -15,5 +16,5 @@ sudo apt install -y \
     unzip \
     zip \
     fontconfig \
-    # alacritty \
     neovim
+    # alacritty \
