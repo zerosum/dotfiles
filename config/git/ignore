@@ -30,3 +30,4 @@ target/
 
 ### asdf
 .tool-versions
+.envrc

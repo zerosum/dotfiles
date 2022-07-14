@@ -12,3 +12,6 @@ else
     git clone https://github.com/asdf-vm/asdf.git $ASDF_DATA_DIR
     source $ASDF_DATA_DIR/asdf.sh
 fi
+
+asdf plugin-add direnv
+asdf direnv setup --version latest
