@@ -25,23 +25,25 @@ zinit ice as"command" from"gh-r" \
           atclone"./starship init zsh > init.zsh; ./starship completions zsh > _starship" \
           atpull"%atclone" src"init.zsh"
 zinit light starship/starship
-export STARSHIP_CONFIG=$XDG_CONFIG_HOME/starship/starship.toml
 
 ###
 source "$ZDOTDIR/plugins/.fzf.zsh"
 [[ -e "$ZDOTDIR/plugins/.local.zsh" ]] &&  source "$ZDOTDIR/plugins/.local.zsh"
 
-export ASDF_DATA_DIR="$XDG_DATA_HOME/asdf"
+###
 source $ASDF_DATA_DIR/asdf.sh
 fpath=(${ASDF_DATA_DIR}/completions $fpath)
 autoload -Uz compinit && compinit
 
 source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc"
 
-export CARGO_HOME="$XDG_DATA_HOME"/cargo
-
+###
 eval "$(navi widget zsh)"
 
+### Haskell
+[ -f "$XDG_DATA_HOME/ghcup/env" ] && source $XDG_DATA_HOME/ghcup/env
+
+###
 zshaddhistory() {
     local line="${1%%$'\n'}"
     [[ ! "$line" =~ "^(cd|jj?|lazygit|la|ll|ls|rm|rmdir)($| )" ]]

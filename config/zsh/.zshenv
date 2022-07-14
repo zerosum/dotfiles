@@ -9,3 +9,17 @@ export XDG_CACHE_HOME="$HOME/.cache"
 
 ### zsh ###
 export ZDOTDIR="$XDG_CONFIG_HOME/zsh"
+
+### starship ###
+export STARSHIP_CONFIG=$XDG_CONFIG_HOME/starship/starship.toml
+
+### asdf ###
+export ASDF_DATA_DIR="$XDG_DATA_HOME/asdf"
+
+### Haskell ###
+export CABAL_CONFIG="$XDG_CONFIG_HOME"/cabal/config
+export CABAL_DIR="$XDG_CACHE_HOME"/cabal
+export GHCUP_USE_XDG_DIRS=1
+
+### Rust ###
+export CARGO_HOME="$XDG_DATA_HOME"/cargo
