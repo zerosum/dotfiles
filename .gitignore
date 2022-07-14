@@ -1,4 +1,5 @@
 .zcompdump
 .zsh_history
 .vscode
-.local.zsh
+config/zsh/plugins/.local.zsh
+config/git/config.local

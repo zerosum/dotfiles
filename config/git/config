@@ -7,3 +7,6 @@
 [user]
     name = zerosum
     email = 345161+zerosum@users.noreply.github.com
+
+[include]
+    path = ~/.config/git/config.local
