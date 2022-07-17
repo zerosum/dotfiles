@@ -6,3 +6,9 @@ config/zsh/plugins/.local.zsh
 config/git/config.local
 config/direnv/lib/use_asdf.sh
 config/asdf-direnv/zshrc
+
+### emacs
+config/emacs/auto-save-list/
+config/emacs/elpa/
+config/emacs/url/
+*~

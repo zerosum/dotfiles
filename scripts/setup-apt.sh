@@ -3,6 +3,7 @@
 [ "$(uname)" = "Darwin" ] && exit
 
 sudo add-apt-repository -y ppa:mmstick76/alacritty
+sudo add-apt-repository -y ppa:kelleyk/emacs
 
 sudo apt update
 sudo apt upgrade -y
@@ -15,5 +16,6 @@ sudo apt install -y \
     unzip \
     zip \
     fontconfig \
-    neovim
+    neovim \
+    emacs28
     # alacritty \

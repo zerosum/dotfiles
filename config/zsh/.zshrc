@@ -48,3 +48,6 @@ zshaddhistory() {
     local line="${1%%$'\n'}"
     [[ ! "$line" =~ "^(cd|jj?|lazygit|la|ll|ls|rm|rmdir)($| )" ]]
 }
+
+### aliases
+alias scheme='docker run -it --rm -w /root/work z3r05um/mit-scheme:11.2'
