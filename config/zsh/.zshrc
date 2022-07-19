@@ -46,8 +46,9 @@ eval "$(navi widget zsh)"
 ###
 zshaddhistory() {
     local line="${1%%$'\n'}"
-    [[ ! "$line" =~ "^(cd|jj?|lazygit|la|ll|ls|rm|rmdir)($| )" ]]
+    [[ ! "$line" =~ "^(cd|jj?|lazygit|la|ll|ls|rm|rmdir|fg)($| )" ]]
 }
 
 ### aliases
 alias scheme='docker run -it --rm -w /root/work z3r05um/mit-scheme:11.2'
+alias em='emacs -nw'
