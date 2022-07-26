@@ -37,7 +37,8 @@ autoload -Uz compinit && compinit
 
 source "${XDG_CONFIG_HOME:-$HOME/.config}/asdf-direnv/zshrc"
 
-###
+### navi
+export NAVI_PATH="$XDG_DATA_HOME/navi/cheats:`navi info cheats-path`"
 eval "$(navi widget zsh)"
 
 ### Haskell

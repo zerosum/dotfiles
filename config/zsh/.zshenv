@@ -31,4 +31,3 @@ export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
 
 ### navi ###
 export NAVI_CONFIG="$XDG_CONFIG_HOME"/navi/config.yaml
-export NAVI_PATH="$XDG_DATA_HOME/navi/cheats:`navi info cheats-path`"
