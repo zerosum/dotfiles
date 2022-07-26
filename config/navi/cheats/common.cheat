@@ -1,0 +1,15 @@
+% navi, cheatsheet
+$editor: echo 'emacs -nw'
+
+# edit local main cheatsheet
+<editor> $XDG_DATA_HOME/navi/cheats/main.cheat
+
+% dotfiles
+
+# move to dir `.dotfiles`
+cd $HOME/.dotfiles
+
+% dotfiles
+
+# run install.sh
+sh $HOME/.dotfiles/install.sh
