@@ -35,5 +35,5 @@ zle -N frepo
 bindkey '^]' frepo
 
 # common setting
-export FZF_DEFAULT_OPTS='--height 20% --reverse --border --prompt="? "'
+export FZF_DEFAULT_OPTS='--height 50% --reverse --border --prompt="? "'
 export FZF_ALT_C_OPTS="--select-1 --exit-0"
