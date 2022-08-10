@@ -16,9 +16,6 @@ export STARSHIP_CONFIG=$XDG_CONFIG_HOME/starship/starship.toml
 ### asdf ###
 export ASDF_DATA_DIR="$XDG_DATA_HOME/asdf"
 
-### Docker ###
-export DOCKER_CONFIG="$XDG_CONFIG_HOME"/docker
-
 ### Haskell ###
 export CABAL_CONFIG="$XDG_CONFIG_HOME"/cabal/config
 export CABAL_DIR="$XDG_CACHE_HOME"/cabal
