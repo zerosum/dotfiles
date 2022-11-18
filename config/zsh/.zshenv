@@ -22,9 +22,5 @@ export CABAL_DIR="$XDG_CACHE_HOME"/cabal
 export STACK_ROOT="$XDG_DATA_HOME"/stack
 export GHCUP_USE_XDG_DIRS=1
 
-### Rust ###
-export CARGO_HOME="$XDG_DATA_HOME"/cargo
-export RUSTUP_HOME="$XDG_DATA_HOME"/rustup
-
 ### navi ###
 export NAVI_CONFIG="$XDG_CONFIG_HOME"/navi/config.yaml

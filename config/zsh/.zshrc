@@ -5,7 +5,6 @@ path=(
     /opt/homebrew/bin(N-/)
     "$HOME/.local/bin"(N-/)
     "$XDG_CONFIG_HOME/scripts/bin"(N-/)
-    "$XDG_DATA_HOME/cargo/bin"(N-/)
     "$path[@]"
 )
 
