@@ -6,6 +6,7 @@ config/zsh/plugins/.local.zsh
 config/git/config.local
 config/direnv/lib/use_asdf.sh
 config/asdf-direnv/zshrc
+config/asdf-direnv/bashrc
 
 ### emacs
 config/emacs/auto-save-list/
