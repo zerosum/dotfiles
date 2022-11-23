@@ -9,3 +9,5 @@ gawk
 httpie
 jq
 neovim
+sheldon
+starship

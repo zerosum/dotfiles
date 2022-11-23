@@ -7,13 +7,8 @@ sudo add-apt-repository -y ppa:kelleyk/emacs
 sudo apt update
 sudo apt upgrade -y
 sudo apt install -y \
+    build-essential \
     git \
     curl \
-    wget \
-    cmake \
-    zsh \
-    unzip \
-    zip \
     fontconfig \
-    neovim \
     emacs28

@@ -1,14 +1,19 @@
 #!/usr/bin/env bash
 
-[ "$(uname)" != "Darwin" ] && exit
+brewhome=''
+if [[ "$(uname)" == "Darwin" ]]; then
+  brewhome="/opt/homebrew"
+else
+  brewhome="/home/linuxbrew/.linuxbrew"
+fi
 
 source "$(dirname "$0")/common.sh"
 
-if [ -z $(command -v /opt/homebrew/bin/brew) ]; then
+if [ -z $(command -v ${brewhome}/bin/brew) ]; then
   /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 fi
 
-eval "$(/opt/homebrew/bin/brew shellenv)"
+eval "$(${brewhome}/bin/brew shellenv)"
 
 brew update
 
@@ -17,10 +22,12 @@ do
   [[ -z $(brew tap | grep $tap) ]] && brew tap $tap
 done
 
-for cask in $(cat $REPO_DIR/config/brew/caskfiles)
-do
-  [[ -z $(brew list --cask | grep $cask) ]] && brew install --cask $cask --force
-done
+if [[ "$(uname)" == "Darwin" ]]; then
+  for cask in $(cat $REPO_DIR/config/brew/caskfiles)
+  do
+    [[ -z $(brew list --cask | grep $cask) ]] && brew install --cask $cask --force
+  done
+fi
 
 for keg in $(cat $REPO_DIR/config/brew/brewfiles)
 do

@@ -4,7 +4,7 @@ case $OSTYPE in
     fzf_dir=/opt/homebrew/opt/fzf
     ;;
     *)
-    fzf_dir=$XDG_DATA_HOME/fzf
+    fzf_dir=/home/linuxbrew/.linuxbrew/opt/fzf
     ;;
 esac
 
@@ -35,5 +35,5 @@ zle -N frepo
 bindkey '^]' frepo
 
 # common setting
-export FZF_DEFAULT_OPTS='--height 50% --reverse --border --prompt="? "'
+export FZF_DEFAULT_OPTS='--reverse --border --prompt="? "'
 export FZF_ALT_C_OPTS="--select-1 --exit-0"
