@@ -49,6 +49,10 @@
       set -g pane-border-style "fg=#073642"
       set -g pane-active-border-style "fg=#268bd2"
 
+      # Dim inactive panes
+      set -g window-style "bg=#0a3f4e"
+      set -g window-active-style "bg=#002b36"
+
       # Copy mode (macOS pbcopy integration)
       bind -T copy-mode-vi v send-keys -X begin-selection
       bind -T copy-mode-vi y send-keys -X copy-pipe-and-cancel "pbcopy"
