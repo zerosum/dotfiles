@@ -9,6 +9,7 @@
       git = import ./module/git;
       zsh = import ./module/zsh;
       alacritty = import ./module/alacritty;
+      tmux = import ./module/tmux;
     };
   };
 }

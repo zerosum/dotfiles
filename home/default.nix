@@ -5,6 +5,7 @@
       ../module/git
       ../module/zsh
       ../module/alacritty
+      ../module/tmux
     ];
 
     home.packages = with pkgs; [
@@ -15,7 +16,6 @@
       fzf
       navi
       httpie
-      tmux
     ];
 
     home.file.".config/ghostty/config".text = ''
