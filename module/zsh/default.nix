@@ -7,6 +7,22 @@
         g = "frepo";
     };
     initContent = ''
+    # Auto-start tmux with session picker
+    if [[ -z "$TMUX" && $- == *i* ]]; then
+      _tmux_sessions=$(tmux ls -F '#{session_name}' 2>/dev/null)
+      if [[ -n "$_tmux_sessions" ]]; then
+        _choice=$(echo "$_tmux_sessions\n[new session]" | fzf --prompt="tmux session> " --height=~10)
+        if [[ "$_choice" == "[new session]" ]]; then
+          exec tmux new-session
+        elif [[ -n "$_choice" ]]; then
+          exec tmux attach -t "$_choice"
+        fi
+      else
+        exec tmux new-session
+      fi
+      unset _tmux_sessions _choice
+    fi
+
     frepo() {
         local dir
         dir=$(ghq list | fzf-tmux)

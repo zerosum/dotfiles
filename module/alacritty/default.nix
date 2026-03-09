@@ -10,6 +10,7 @@
       };
 
       window = {
+        dimensions = { columns = 240; lines = 72; };
         padding = { x = 8; y = 8; };
         dynamic_padding = true;
         decorations = "full";
