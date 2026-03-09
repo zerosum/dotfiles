@@ -17,7 +17,7 @@
       };
 
       font = {
-        size = 12.5;
+        size = 15;
 
         normal = {
           family = "HackGen Console NF";
