@@ -2,6 +2,10 @@
 
 {
   programs.zsh = {
+    sessionVariables = {
+      LANG = "ja_JP.UTF-8";
+    };
+
     shellAliases = {
         ll = "ls -alF";
         g = "frepo";
