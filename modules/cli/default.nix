@@ -2,8 +2,6 @@
 
 {
     home.packages = with pkgs; [
-      neofetch
-
       ghq
       jq
       fzf
